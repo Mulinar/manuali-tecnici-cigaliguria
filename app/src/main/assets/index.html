@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#031a31">
+<meta name="description" content="Archivio manuali tecnici CIGALIGURIA">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Manuali Tecnici – Tecnici CIGALIGURIA</title>
+<style>
+:root{color-scheme:dark;--bg:#03172b;--panel:#082943;--line:#17608a;--txt:#f6fbff;--muted:#b8d0e2;--glow:#16bfff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#124b78 0,#062844 34%,#021326 76%);color:var(--txt);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh}
+button,input{font:inherit}button{cursor:pointer}.app{max-width:760px;margin:auto;padding:0 13px 28px}
+header{position:relative;text-align:center;padding:22px 12px 17px;overflow:hidden}
+header:before,header:after{content:"";position:absolute;width:130%;height:1px;background:linear-gradient(90deg,transparent,#00c8ff,transparent);transform:rotate(-24deg);left:-15%;top:60px;box-shadow:0 0 14px #00bfff}
+header:after{top:220px;transform:rotate(-18deg)}
+.headtools{position:absolute;top:24px;left:7px;right:7px;display:flex;justify-content:space-between;z-index:2}
+.iconbtn{width:42px;height:42px;border:1px solid #4aa5d0;border-radius:14px;background:#092b49d9;color:white;font-size:23px}
+.emblem{position:relative;z-index:1;font-size:76px;line-height:1.1;color:#eafaff;text-shadow:0 0 10px #00bfff,0 0 25px #008dff;margin:5px auto}
+h1{position:relative;z-index:1;font-size:clamp(25px,6vw,39px);letter-spacing:1.5px;margin:0;font-weight:850;text-shadow:0 2px 14px #62cfff55}
+header p{position:relative;z-index:1;letter-spacing:4px;font-size:12px;margin:7px 0 14px;color:#d7edfa}
+.flag{width:150px;height:8px;border-radius:9px;margin:auto;background:linear-gradient(90deg,#009b45 0 33%,#fff 33% 66%,#e31b35 66%)}
+.searchwrap{position:relative;margin:10px 1px 18px}
+.search{width:100%;height:58px;border:2px solid #3ca5d6;border-radius:30px;background:linear-gradient(100deg,#153e5d,#092d4b);box-shadow:0 0 0 3px #0b477033,inset 0 1px 8px #ffffff12;color:white;padding:0 48px 0 52px;font-size:16px;outline:none}
+.search::placeholder{color:#d5e5f0}.mag{position:absolute;left:18px;top:13px;font-size:26px}.clear{position:absolute;right:12px;top:9px;background:none;border:0;color:#cde7f7;font-size:28px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.tile{position:relative;min-height:145px;border-radius:25px;padding:15px 14px 13px;text-align:left;color:white;border:2px solid var(--edge);background:linear-gradient(140deg,var(--c1),var(--c2));box-shadow:0 7px 20px #0008,inset 0 1px 9px #ffffff55;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;isolation:isolate}
+.tile:before{content:"";position:absolute;inset:-45% -25% auto auto;width:170px;height:170px;border:1px solid #ffffff35;border-radius:50%;box-shadow:0 0 0 17px #ffffff0c,0 0 0 35px #ffffff08;z-index:-1}
+.tile:active,.quick button:active{transform:scale(.985)}
+.tile .brand{font-size:clamp(18px,4vw,25px);font-weight:900;letter-spacing:.3px;text-shadow:0 2px 6px #0006;line-height:1.05}
+.tile .symbol{font-size:42px;line-height:1.1;filter:drop-shadow(0 3px 4px #0005)}
+.tile .sub{font-size:12px;font-weight:650;display:flex;align-items:center;gap:8px;border-top:1px solid #ffffff35;padding-top:10px;color:#f3fbff}
+.tile .arrow{margin-left:auto;width:30px;height:30px;border-radius:50%;background:#ffffff28;display:grid;place-items:center;font-size:23px}
+.coca{--c1:#ff1738;--c2:#85051d;--edge:#ff5d72}.heineken{--c1:#00a94f;--c2:#00542e;--edge:#27e58a}.mcd{--c1:#ef2732;--c2:#850b1b;--edge:#ff5d65}.pepsi{--c1:#087ee9;--c2:#032d80;--edge:#29bfff}.doreca{--c1:#8da8b8;--c2:#203d53;--edge:#d1e9f7}.carpi{--c1:#17b9e8;--c2:#07517f;--edge:#5de3ff}.ricambi{--c1:#365a78;--c2:#071c32;--edge:#6aa5cc}.mine{--c1:#f6b928;--c2:#8d4a00;--edge:#ffe16b}
+.quick{margin:19px -2px 0;padding:12px;border:1px solid #1678a8;border-radius:27px;background:linear-gradient(130deg,#0a3555,#061d34);box-shadow:0 9px 24px #0008;display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+.quick button{position:relative;min-height:94px;border:2px solid #398eb5;border-radius:20px;background:linear-gradient(145deg,#164765,#09253e);color:white;font-size:12px;font-weight:750;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;box-shadow:inset 0 1px 8px #ffffff20}
+.quick button:first-child{border-color:#35e9a0;background:linear-gradient(145deg,#00a866,#004b3a)}
+.quick .qicon{font-size:29px}.count{position:absolute;right:4px;top:-8px;background:#f0182d;border-radius:20px;padding:3px 8px;font-size:12px}
+.status{font-size:11px;text-align:center;color:#a9c9dd;padding:14px 4px 0}
+.page{display:none}.page.active{display:block}.back{border:1px solid #32789e;border-radius:13px;background:#103652;color:white;padding:10px 14px;margin:7px 0 14px}
+.pagehead{display:flex;align-items:center;gap:12px;margin-bottom:12px}.pagehead h2{font-size:23px;margin:0}.pagehead small{color:var(--muted)}
+.panel{border:1px solid #1d5b7e;border-radius:20px;background:#082943;padding:15px;margin:12px 0;box-shadow:0 7px 20px #0005}
+.field{width:100%;border:1px solid #397b9d;border-radius:12px;background:#041c31;color:white;padding:13px;margin:0 0 10px;outline:none}
+.action{width:100%;border:0;border-radius:13px;background:linear-gradient(110deg,#00b879,#007e62);color:white;font-weight:800;padding:14px}
+.fileinput{display:none}.hint{font-size:12px;color:#b6cddd;line-height:1.5;margin:9px 0 0}
+.doclist{display:grid;gap:9px}.doc{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #1a5475;border-radius:15px;background:#0b2c47}
+.pdficon{font-size:27px}.docinfo{min-width:0;flex:1}.docinfo b{display:block;overflow-wrap:anywhere;font-size:14px}.docinfo small{display:block;color:#a9c6d9;font-size:11px;margin-top:3px;overflow-wrap:anywhere}
+.docbuttons{display:flex;gap:5px}.mini{border:1px solid #357b9e;border-radius:10px;padding:8px 9px;background:#123d5b;color:white;font-size:12px}
+.mini.fav{color:#ffdb67}.empty{text-align:center;color:#afc8d9;padding:22px 8px;border:1px dashed #286083;border-radius:15px}
+.hidden{display:none!important}footer{text-align:center;color:#7fa5bd;font-size:11px;padding:20px 5px}
+@media(max-width:390px){.tile{min-height:128px;padding:12px}.tile .symbol{font-size:34px}.quick{gap:6px;padding:9px}.quick button{min-height:84px;font-size:11px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+ <div class="headtools"><button class="iconbtn" id="menuBtn" aria-label="Menu">☰</button><button class="iconbtn" id="settingsBtn" aria-label="Impostazioni">⚙</button></div>
+ <div class="emblem">📖🔧</div><h1>MANUALI TECNICI</h1><p>TECNICI CIGALIGURIA</p><div class="flag"></div>
+</header>
+<section id="home">
+ <div class="searchwrap"><span class="mag">⌕</span><input id="globalSearch" class="search" placeholder="Cerca marca, manuale o parola chiave..." autocomplete="off"><button class="clear" id="clearSearch" aria-label="Cancella">×</button></div>
+ <div class="grid" id="brandGrid">
+  <button class="tile coca" data-brand="Coca-Cola"><span class="symbol">🥤</span><span class="brand">COCA-COLA</span><span class="sub">▣ Manuali e Documenti <b class="arrow">›</b></span></button>
+  <button class="tile heineken" data-brand="Heineken"><span class="symbol">🍺</span><span class="brand">HEINEKEN</span><span class="sub">▣ Manuali e Documenti <b class="arrow">›</b></span></button>
+  <button class="tile mcd" data-brand="McDonald's"><span class="symbol">🍟</span><span class="brand">McDONALD'S</span><span class="sub">▣ Manuali e Documenti <b class="arrow">›</b></span></button>
+  <button class="tile pepsi" data-brand="Pepsi"><span class="symbol">🥤</span><span class="brand">PEPSI</span><span class="sub">▣ Manuali e Documenti <b class="arrow">›</b></span></button>
+  <button class="tile doreca" data-brand="Doreca"><span class="symbol">🍻</span><span class="brand">DORECA</span><span class="sub">▣ Manuali e Documenti <b class="arrow">›</b></span></button>
+  <button class="tile carpi" data-brand="Carpigiani"><span class="symbol">🍦</span><span class="brand">CARPIGIANI</span><span class="sub">▣ Manuali e Documenti <b class="arrow">›</b></span></button>
+  <button class="tile ricambi" data-brand="Area ricambi"><span class="symbol">⚙️</span><span class="brand">AREA RICAMBI</span><span class="sub">Esplora i ricambi <b class="arrow">›</b></span></button>
+  <button class="tile mine" data-view="all"><span class="symbol">📁</span><span class="brand">I MIEI MANUALI</span><span class="sub">PDF salvati <b class="arrow">›</b></span></button>
+ </div>
+ <nav class="quick">
+  <button id="quickAdd"><span class="qicon">📄＋</span>Aggiungi PDF</button>
+  <button data-view="all"><span class="qicon">⇩</span>Scaricati <span class="count" id="count">0</span></button>
+  <button data-view="favorites"><span class="qicon">☆</span>Preferiti</button>
+  <button data-view="recent"><span class="qicon">◷</span>Recenti</button>
+ </nav>
+ <div class="status" id="storageStatus">Archivio locale in preparazione…</div>
+ <section class="panel">
+  <b>🛡️ Proteggi i tuoi manuali</b>
+  <p class="hint">Esporta una copia di sicurezza e importala per recuperare i PDF su un altro dispositivo.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px"><button class="mini" id="backupBtn">⬇ Esporta backup</button><button class="mini" id="restoreBtn">↥ Importa backup</button><input id="backupFile" class="hidden" type="file" accept=".json,application/json"></div>
+  <div class="hint" id="backupStatus"></div>
+ </section>
+</section>
+<section id="detail" class="page">
+ <button class="back" id="backBtn">← Indietro</button>
+ <div class="pagehead"><div style="font-size:34px" id="pageEmoji">📘</div><div><h2 id="pageTitle">Marca</h2><small id="pageSubtitle">Archivio manuali</small></div></div>
+ <div class="panel">
+  <input id="docTitle" class="field" placeholder="Nome manuale / modello / codice">
+  <label class="action" for="pdfFile">＋ Scegli PDF dal telefono</label><input id="pdfFile" class="fileinput" type="file" accept="application/pdf,.pdf">
+  <p class="hint" id="saveStatus">Il PDF sarà archiviato nella cartella selezionata.</p>
+ </div>
+ <input id="pageSearch" class="search" placeholder="Cerca modello, codice o manuale...">
+ <div class="doclist" id="docList"></div>
+</section>
+<footer>MANUALI TECNICI · TECNICI CIGALIGURIA</footer>
+</div>
+<script>
+const DB='manualiTecniciCig_db_v2', STORE='docs';
+const $=id=>document.getElementById(id);
+let activeBrand='', docs=[], currentView='brand', searchMode=false;
+const brandEmoji={'Coca-Cola':'🥤','Heineken':'🍺',"McDonald's":'🍟','Pepsi':'🥤','Doreca':'🍻','Carpigiani':'🍦','Area ricambi':'⚙️'};
+function openDB(){return new Promise((resolve,reject)=>{
+ if(!('indexedDB' in window)){reject(new Error('Questo browser non supporta l’archivio.'));return}
+ let req;try{req=indexedDB.open(DB,1)}catch(e){reject(e);return}
+ req.onupgradeneeded=()=>{if(!req.result.objectStoreNames.contains(STORE))req.result.createObjectStore(STORE,{keyPath:'id',autoIncrement:true})};
+ req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error||new Error('Archivio non accessibile.'));
+ req.onblocked=()=>reject(new Error('Chiudi le altre schede dell’app e riprova.'));
+})}
+async function allDocs(){const db=await openDB();return new Promise((res,rej)=>{const r=db.transaction(STORE).objectStore(STORE).getAll();r.onsuccess=()=>res(r.result||[]);r.onerror=()=>rej(r.error)})}
+async function addDoc(doc){const db=await openDB();return new Promise((res,rej)=>{const tx=db.transaction(STORE,'readwrite'),r=tx.objectStore(STORE).add(doc);tx.oncomplete=()=>res(r.result);tx.onerror=()=>rej(tx.error||new Error('Errore nel database'));tx.onabort=()=>rej(tx.error||new Error('Salvataggio annullato'))})}
+async function updateDoc(doc){const db=await openDB();return new Promise((res,rej)=>{const tx=db.transaction(STORE,'readwrite');tx.objectStore(STORE).put(doc);tx.oncomplete=()=>res();tx.onerror=()=>rej(tx.error)})}
+async function deleteDoc(id){const db=await openDB();return new Promise((res,rej)=>{const tx=db.transaction(STORE,'readwrite');tx.objectStore(STORE).delete(id);tx.oncomplete=()=>res();tx.onerror=()=>rej(tx.error)})}
+async function refresh(){docs=await allDocs();$('count').textContent=docs.length;renderList();updateStorage()}
+function showHome(){ $('home').classList.remove('hidden');$('detail').classList.remove('active');$('detail').classList.add('page');window.scrollTo(0,0)}
+function showList(view,title){currentView=view;activeBrand='';$('home').classList.add('hidden');$('detail').classList.remove('page');$('detail').classList.add('active');$('pageEmoji').textContent=view==='favorites'?'⭐':view==='recent'?'🕘':'📁';$('pageTitle').textContent=title;$('pageSubtitle').textContent=docs.length+' manuali archiviati';$('pdfFile').disabled=true;$('docTitle').classList.add('hidden');$('pdfFile').parentElement.classList.add('hidden');$('pageSearch').value='';renderList();window.scrollTo(0,0)}
+function openBrand(name){currentView='brand';activeBrand=name;$('home').classList.add('hidden');$('detail').classList.remove('page');$('detail').classList.add('active');$('pageEmoji').textContent=brandEmoji[name]||'📘';$('pageTitle').textContent=name;$('pageSubtitle').textContent='Manuali e documenti';$('docTitle').classList.remove('hidden');$('pdfFile').parentElement.classList.remove('hidden');$('saveStatus').textContent='Il PDF sarà archiviato in '+name+'.';$('pageSearch').value='';renderList();window.scrollTo(0,0)}
+function renderList(){let q=$('pageSearch').value.trim().toLowerCase();let list=docs.filter(d=>{
+ if(currentView==='brand'&&d.brand!==activeBrand)return false;
+ if(currentView==='favorites'&&!d.favorite)return false;
+ if(currentView==='recent'&&!d.openedAt)return false;
+ return [d.title,d.name,d.brand].join(' ').toLowerCase().includes(q);
+});
+if(currentView==='recent')list.sort((a,b)=>(b.openedAt||'').localeCompare(a.openedAt||''));
+else list.sort((a,b)=>(a.title||a.name||'').localeCompare(b.title||b.name||''));
+$('docList').innerHTML='';
+if(!list.length){$('docList').innerHTML='<div class="empty">Nessun manuale in questa sezione.<br>Usa “Scegli PDF dal telefono” per aggiungerne uno.</div>';return}
+list.forEach(d=>{const el=document.createElement('article');el.className='doc';const ic=document.createElement('div');ic.className='pdficon';ic.textContent='📕';const info=document.createElement('div');info.className='docinfo';const b=document.createElement('b');b.textContent=d.title||d.name;const sm=document.createElement('small');sm.textContent=d.brand+' · '+d.name;info.append(b,sm);const actions=document.createElement('div');actions.className='docbuttons';const open=document.createElement('button');open.className='mini';open.textContent='Apri';open.onclick=()=>openPDF(d);const fav=document.createElement('button');fav.className='mini fav';fav.textContent=d.favorite?'★':'☆';fav.title='Preferito';fav.onclick=async()=>{d.favorite=!d.favorite;await updateDoc(d);await refresh()};const del=document.createElement('button');del.className='mini';del.textContent='✕';del.title='Elimina';del.onclick=async()=>{if(confirm('Eliminare '+(d.title||d.name)+'?')){await deleteDoc(d.id);await refresh()}};actions.append(open,fav,del);el.append(ic,info,actions);$('docList').append(el)});
+}
+async function openPDF(d){try{const blob=d.file instanceof Blob?d.file:new Blob([d.file],{type:'application/pdf'});const buf=await blob.arrayBuffer();const bytes=new Uint8Array(buf);let binary='';const chunk=0x8000;for(let i=0;i<bytes.length;i+=chunk)binary+=String.fromCharCode(...bytes.subarray(i,Math.min(i+chunk,bytes.length)));const b64=btoa(binary);if(window.AndroidBridge&&AndroidBridge.openPdf){AndroidBridge.openPdf(b64,d.name||'manuale.pdf')}else{const url=URL.createObjectURL(blob);window.open(url,'_blank');setTimeout(()=>URL.revokeObjectURL(url),180000)}d.openedAt=new Date().toISOString();await updateDoc(d);await refresh()}catch(e){alert('Non riesco ad aprire questo PDF: '+e.message)}}
+async function updateStorage(){try{if(navigator.storage?.estimate){const s=await navigator.storage.estimate();$('storageStatus').textContent='Archivio sul dispositivo · '+((s.usage||0)/1048576).toFixed(1)+' MB utilizzati'}else $('storageStatus').textContent='Archivio locale del browser'}catch(e){$('storageStatus').textContent='Archivio locale del browser'}}
+$('brandGrid').addEventListener('click',e=>{const b=e.target.closest('[data-brand]');if(b)openBrand(b.dataset.brand);const v=e.target.closest('[data-view]');if(v)showList('all','I miei manuali')});
+document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>{const v=b.dataset.view;showList(v,v==='favorites'?'Preferiti':v==='recent'?'Recenti':'I miei manuali')}));
+$('quickAdd').onclick=()=>{const choice=prompt('In quale cartella vuoi aggiungere il PDF?\n1 Coca-Cola\n2 Heineken\n3 McDonald’s\n4 Pepsi\n5 Doreca\n6 Carpigiani\n7 Area ricambi','1');const names=['Coca-Cola','Heineken',"McDonald's",'Pepsi','Doreca','Carpigiani','Area ricambi'];const selected=names[Number(choice)-1];if(selected){openBrand(selected);setTimeout(()=>$('pdfFile').click(),150)}};
+$('backBtn').onclick=showHome;
+$('pageSearch').addEventListener('input',renderList);
+$('globalSearch').addEventListener('input',e=>{const q=e.target.value.trim().toLowerCase();document.querySelectorAll('.tile[data-brand]').forEach(t=>t.classList.toggle('hidden',!t.dataset.brand.toLowerCase().includes(q)));if(q){const matches=docs.filter(d=>[d.title,d.name,d.brand].join(' ').toLowerCase().includes(q));$('storageStatus').textContent=matches.length+' manuali trovati: '+matches.map(d=>(d.title||d.name)+' ('+d.brand+')').slice(0,5).join(' · ')}else updateStorage()});
+$('clearSearch').onclick=()=>{$('globalSearch').value='';$('globalSearch').dispatchEvent(new Event('input'));document.querySelectorAll('.tile[data-brand]').forEach(t=>t.classList.remove('hidden'))};
+$('pdfFile').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;const s=$('saveStatus');if(f.type!=='application/pdf'&&!f.name.toLowerCase().endsWith('.pdf')){s.textContent='Seleziona un file PDF.';return}s.textContent='Salvataggio in corso…';try{if(navigator.storage?.persist)await navigator.storage.persist();await addDoc({brand:activeBrand,title:$('docTitle').value.trim()||f.name.replace(/\.pdf$/i,''),name:f.name,file:f,added:new Date().toISOString(),favorite:false});$('docTitle').value='';e.target.value='';s.textContent='✓ Manuale salvato correttamente in '+activeBrand+'.';await refresh()}catch(err){s.textContent='Salvataggio non riuscito: '+(err.name==='QuotaExceededError'?'spazio del browser esaurito.':err.message||'errore del browser');}});
+function downloadBlob(blob,name){const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),60000)}
+function toB64(file){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(',')[1]);r.onerror=()=>rej(r.error);r.readAsDataURL(file)})}
+function fromB64(s,type){const raw=atob(s),arr=new Uint8Array(raw.length);for(let i=0;i<raw.length;i++)arr[i]=raw.charCodeAt(i);return new Blob([arr],{type:type||'application/pdf'})}
+$('backupBtn').onclick=async()=>{const s=$('backupStatus');try{s.textContent='Preparo il backup…';const items=[];for(const d of docs)items.push({brand:d.brand,title:d.title,name:d.name,added:d.added,favorite:!!d.favorite,openedAt:d.openedAt,type:d.file?.type||'application/pdf',data:await toB64(d.file)});downloadBlob(new Blob([JSON.stringify({app:'Manuali Tecnici CIGALIGURIA',version:2,documents:items})],{type:'application/json'}),'Backup_Manuali_Tecnici.json');s.textContent='Backup pronto. Conserva il file JSON in un luogo sicuro.'}catch(e){s.textContent='Backup non riuscito: '+e.message}};
+$('restoreBtn').onclick=()=>$('backupFile').click();
+$('backupFile').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;const s=$('backupStatus');try{const data=JSON.parse(await f.text());if(!Array.isArray(data.documents))throw Error('Backup non valido');if(!confirm('Importare '+data.documents.length+' manuali?'))return;for(const d of data.documents)await addDoc({brand:d.brand,title:d.title,name:d.name,added:d.added||new Date().toISOString(),favorite:!!d.favorite,openedAt:d.openedAt,file:fromB64(d.data,d.type)});await refresh();s.textContent='Backup importato correttamente.'}catch(err){s.textContent='Importazione non riuscita: '+err.message}finally{e.target.value=''}});
+$('settingsBtn').onclick=()=>document.getElementById('backupBtn').scrollIntoView({behavior:'smooth',block:'center'});
+$('menuBtn').onclick=()=>showList('all','I miei manuali');
+(async()=>{try{await refresh();if(navigator.storage?.persist)await navigator.storage.persist();if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});}catch(e){$('storageStatus').textContent='Archivio non disponibile: apri l’app con Chrome da un indirizzo HTTPS. '+e.message}})();
+</script>
+</body></html>
