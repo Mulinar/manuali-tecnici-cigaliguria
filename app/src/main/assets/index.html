@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#031a31">
-<meta name="description" content="Archivio manuali tecnici CIGALIGURIA">
+<meta name="description" content="Archivio manuali tecnici CIGAGROUP">
 <link rel="manifest" href="manifest.webmanifest">
-<title>Manuali Tecnici – Tecnici CIGALIGURIA</title>
+<title>CIGAGROUP – Manuali Tecnici</title>
 <style>
 :root{color-scheme:dark;--bg:#03172b;--panel:#082943;--line:#17608a;--txt:#f6fbff;--muted:#b8d0e2;--glow:#16bfff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#124b78 0,#062844 34%,#021326 76%);color:var(--txt);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh}
@@ -16,7 +16,10 @@ header:before,header:after{content:"";position:absolute;width:130%;height:1px;ba
 header:after{top:220px;transform:rotate(-18deg)}
 .headtools{position:absolute;top:24px;left:7px;right:7px;display:flex;justify-content:space-between;z-index:2}
 .iconbtn{width:42px;height:42px;border:1px solid #4aa5d0;border-radius:14px;background:#092b49d9;color:white;font-size:23px}
-.emblem{position:relative;z-index:1;font-size:76px;line-height:1.1;color:#eafaff;text-shadow:0 0 10px #00bfff,0 0 25px #008dff;margin:5px auto}
+.emblem{position:relative;z-index:1;width:116px;height:116px;object-fit:cover;border-radius:27px;border:2px solid #54caff;box-shadow:0 0 24px #00aaff88;margin:4px auto 10px;display:block}
+.topAdd{width:100%;display:flex;align-items:center;justify-content:center;gap:12px;margin:5px 0 17px;padding:16px;border:1px solid #5ce5c0;border-radius:17px;background:linear-gradient(110deg,#00a978,#006b79 60%,#07528a);color:white;font-weight:850;font-size:17px;letter-spacing:.2px;box-shadow:0 8px 22px #0007,inset 0 1px 8px #ffffff35}
+.topAdd .qicon{font-size:25px}
+.brandline{font-size:11px;letter-spacing:4px;color:#c5e9ff;margin:0 0 12px}
 h1{position:relative;z-index:1;font-size:clamp(25px,6vw,39px);letter-spacing:1.5px;margin:0;font-weight:850;text-shadow:0 2px 14px #62cfff55}
 header p{position:relative;z-index:1;letter-spacing:4px;font-size:12px;margin:7px 0 14px;color:#d7edfa}
 .flag{width:150px;height:8px;border-radius:9px;margin:auto;background:linear-gradient(90deg,#009b45 0 33%,#fff 33% 66%,#e31b35 66%)}
@@ -32,7 +35,7 @@ header p{position:relative;z-index:1;letter-spacing:4px;font-size:12px;margin:7p
 .tile .sub{font-size:12px;font-weight:650;display:flex;align-items:center;gap:8px;border-top:1px solid #ffffff35;padding-top:10px;color:#f3fbff}
 .tile .arrow{margin-left:auto;width:30px;height:30px;border-radius:50%;background:#ffffff28;display:grid;place-items:center;font-size:23px}
 .coca{--c1:#ff1738;--c2:#85051d;--edge:#ff5d72}.heineken{--c1:#00a94f;--c2:#00542e;--edge:#27e58a}.mcd{--c1:#ef2732;--c2:#850b1b;--edge:#ff5d65}.pepsi{--c1:#087ee9;--c2:#032d80;--edge:#29bfff}.doreca{--c1:#8da8b8;--c2:#203d53;--edge:#d1e9f7}.carpi{--c1:#17b9e8;--c2:#07517f;--edge:#5de3ff}.ricambi{--c1:#365a78;--c2:#071c32;--edge:#6aa5cc}.mine{--c1:#f6b928;--c2:#8d4a00;--edge:#ffe16b}
-.quick{margin:19px -2px 0;padding:12px;border:1px solid #1678a8;border-radius:27px;background:linear-gradient(130deg,#0a3555,#061d34);box-shadow:0 9px 24px #0008;display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+.quick{margin:19px -2px 0;padding:12px;border:1px solid #1678a8;border-radius:27px;background:linear-gradient(130deg,#0a3555,#061d34);box-shadow:0 9px 24px #0008;display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
 .quick button{position:relative;min-height:94px;border:2px solid #398eb5;border-radius:20px;background:linear-gradient(145deg,#164765,#09253e);color:white;font-size:12px;font-weight:750;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;box-shadow:inset 0 1px 8px #ffffff20}
 .quick button:first-child{border-color:#35e9a0;background:linear-gradient(145deg,#00a866,#004b3a)}
 .quick .qicon{font-size:29px}.count{position:absolute;right:4px;top:-8px;background:#f0182d;border-radius:20px;padding:3px 8px;font-size:12px}
@@ -55,9 +58,10 @@ header p{position:relative;z-index:1;letter-spacing:4px;font-size:12px;margin:7p
 <div class="app">
 <header>
  <div class="headtools"><button class="iconbtn" id="menuBtn" aria-label="Menu">☰</button><button class="iconbtn" id="settingsBtn" aria-label="Impostazioni">⚙</button></div>
- <div class="emblem">📖🔧</div><h1>MANUALI TECNICI</h1><p>TECNICI CIGALIGURIA</p><div class="flag"></div>
+ <img class="emblem" src="cigagroup-logo.png" alt="CIGAGROUP Manuali Tecnici"><h1>CIGAGROUP</h1><div class="brandline">MANUALI TECNICI</div><div class="flag"></div>
 </header>
 <section id="home">
+ <button class="topAdd" id="quickAdd"><span class="qicon">＋</span> CARICA PDF</button>
  <div class="searchwrap"><span class="mag">⌕</span><input id="globalSearch" class="search" placeholder="Cerca marca, manuale o parola chiave..." autocomplete="off"><button class="clear" id="clearSearch" aria-label="Cancella">×</button></div>
  <div class="grid" id="brandGrid">
   <button class="tile coca" data-brand="Coca-Cola"><span class="symbol">🥤</span><span class="brand">COCA-COLA</span><span class="sub">▣ Manuali e Documenti <b class="arrow">›</b></span></button>
@@ -70,7 +74,6 @@ header p{position:relative;z-index:1;letter-spacing:4px;font-size:12px;margin:7p
   <button class="tile mine" data-view="all"><span class="symbol">📁</span><span class="brand">I MIEI MANUALI</span><span class="sub">PDF salvati <b class="arrow">›</b></span></button>
  </div>
  <nav class="quick">
-  <button id="quickAdd"><span class="qicon">📄＋</span>Aggiungi PDF</button>
   <button data-view="all"><span class="qicon">⇩</span>Scaricati <span class="count" id="count">0</span></button>
   <button data-view="favorites"><span class="qicon">☆</span>Preferiti</button>
   <button data-view="recent"><span class="qicon">◷</span>Recenti</button>
@@ -94,7 +97,7 @@ header p{position:relative;z-index:1;letter-spacing:4px;font-size:12px;margin:7p
  <input id="pageSearch" class="search" placeholder="Cerca modello, codice o manuale...">
  <div class="doclist" id="docList"></div>
 </section>
-<footer>MANUALI TECNICI · TECNICI CIGALIGURIA</footer>
+<footer>CIGAGROUP · MANUALI TECNICI</footer>
 </div>
 <script>
 const DB='manualiTecniciCig_db_v2', STORE='docs';
@@ -141,7 +144,7 @@ $('pdfFile').addEventListener('change',async e=>{const f=e.target.files[0];if(!f
 function downloadBlob(blob,name){const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),60000)}
 function toB64(file){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(',')[1]);r.onerror=()=>rej(r.error);r.readAsDataURL(file)})}
 function fromB64(s,type){const raw=atob(s),arr=new Uint8Array(raw.length);for(let i=0;i<raw.length;i++)arr[i]=raw.charCodeAt(i);return new Blob([arr],{type:type||'application/pdf'})}
-$('backupBtn').onclick=async()=>{const s=$('backupStatus');try{s.textContent='Preparo il backup…';const items=[];for(const d of docs)items.push({brand:d.brand,title:d.title,name:d.name,added:d.added,favorite:!!d.favorite,openedAt:d.openedAt,type:d.file?.type||'application/pdf',data:await toB64(d.file)});downloadBlob(new Blob([JSON.stringify({app:'Manuali Tecnici CIGALIGURIA',version:2,documents:items})],{type:'application/json'}),'Backup_Manuali_Tecnici.json');s.textContent='Backup pronto. Conserva il file JSON in un luogo sicuro.'}catch(e){s.textContent='Backup non riuscito: '+e.message}};
+$('backupBtn').onclick=async()=>{const s=$('backupStatus');try{s.textContent='Preparo il backup…';const items=[];for(const d of docs)items.push({brand:d.brand,title:d.title,name:d.name,added:d.added,favorite:!!d.favorite,openedAt:d.openedAt,type:d.file?.type||'application/pdf',data:await toB64(d.file)});downloadBlob(new Blob([JSON.stringify({app:'CIGAGROUP Manuali Tecnici',version:2,documents:items})],{type:'application/json'}),'Backup_Manuali_Tecnici.json');s.textContent='Backup pronto. Conserva il file JSON in un luogo sicuro.'}catch(e){s.textContent='Backup non riuscito: '+e.message}};
 $('restoreBtn').onclick=()=>$('backupFile').click();
 $('backupFile').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;const s=$('backupStatus');try{const data=JSON.parse(await f.text());if(!Array.isArray(data.documents))throw Error('Backup non valido');if(!confirm('Importare '+data.documents.length+' manuali?'))return;for(const d of data.documents)await addDoc({brand:d.brand,title:d.title,name:d.name,added:d.added||new Date().toISOString(),favorite:!!d.favorite,openedAt:d.openedAt,file:fromB64(d.data,d.type)});await refresh();s.textContent='Backup importato correttamente.'}catch(err){s.textContent='Importazione non riuscita: '+err.message}finally{e.target.value=''}});
 $('settingsBtn').onclick=()=>document.getElementById('backupBtn').scrollIntoView({behavior:'smooth',block:'center'});

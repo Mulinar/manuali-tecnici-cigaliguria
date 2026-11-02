@@ -1,4 +1,4 @@
-PROGETTO ANDROID – MANUALI TECNICI CIGALIGURIA
+PROGETTO ANDROID – MANUALI TECNICI CIGAGROUP
 
 Questo archivio contiene il progetto sorgente Android (non è ancora un APK).
 La schermata dell'app è inclusa in app/src/main/assets/index.html.
@@ -16,8 +16,8 @@ COME GENERARE L'APK CON GITHUB
 4. Seleziona "Compila APK Android" e premi "Run workflow" (se richiesto scegli il ramo main).
 5. Attendi che il workflow diventi verde.
 6. Apri la compilazione completata e scarica l'artifact
-   "Manuali-Tecnici-CIGALIGURIA-APK".
-7. Apri lo ZIP scaricato: contiene Manuali-Tecnici-CIGALIGURIA.apk.
+   "Manuali-Tecnici-CIGAGROUP-APK".
+7. Apri lo ZIP scaricato: contiene Manuali-Tecnici-CIGAGROUP.apk.
    Sul telefono Android apri l'APK e autorizza l'installazione da questa origine se richiesto.
 
 NOTA: l'APK è il programma. I manuali PDF caricati nell'archivio locale della vecchia app
